@@ -1,0 +1,37 @@
+﻿@model List<tarea.Models.viewModels.listZooView>
+@{
+    ViewBag.Title = "index";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <a href="/zoo/Nuevo" class="btn btn-primary"> Nuevo </a>
+</div>
+
+<div class="row" style="text-align:right;padding:5px;" > 
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <th>País</th>
+                <th>Nombre</th>
+                <th>Telefono</th>
+            </tr>
+
+            @foreach (var elementos in Model)
+            {
+                <tr>
+                    <td>@elementos.id</td>
+                    <td>@elementos.pais</td>
+                    <td>@elementos.nombre</td>
+                    <td>@elementos.telefono</td>
+
+                </tr>
+            }
+
+        </table>
+
+    </div>
+
+</div>

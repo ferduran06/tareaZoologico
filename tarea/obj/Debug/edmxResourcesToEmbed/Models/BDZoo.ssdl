@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bdZooModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'bdZoo.dbo.zologico' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="zologico">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pais" Type="varchar" MaxLength="20" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="telefono" Type="int" />
+    <Property Name="sitioWeb" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="bdZooModelStoreContainer">
+    <EntitySet Name="zologico" EntityType="Self.zologico" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [zologico].[id] AS [id], 
+    [zologico].[pais] AS [pais], 
+    [zologico].[nombre] AS [nombre], 
+    [zologico].[telefono] AS [telefono], 
+    [zologico].[sitioWeb] AS [sitioWeb]
+    FROM [dbo].[zologico] AS [zologico]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
