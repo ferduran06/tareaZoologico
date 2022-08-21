@@ -80,3 +80,7 @@ C:\Users\ma210\Desktop\tarea\tarea\obj\Debug\tarea.csproj.AssemblyReference.cach
 C:\Users\ma210\Desktop\tarea\tarea\obj\Debug\tarea.csproj.CoreCompileInputs.cache
 C:\Users\ma210\Desktop\tarea\tarea\obj\Debug\tarea.dll
 C:\Users\ma210\Desktop\tarea\tarea\obj\Debug\tarea.pdb
+C:\Users\ma210\Source\Repos\tareaZoologico\tarea\obj\Debug\tarea.csproj.AssemblyReference.cache
+C:\Users\ma210\Source\Repos\tareaZoologico\tarea\obj\Debug\tarea.csproj.CoreCompileInputs.cache
+C:\Users\ma210\Source\Repos\tareaZoologico\tarea\obj\Debug\tarea.dll
+C:\Users\ma210\Source\Repos\tareaZoologico\tarea\obj\Debug\tarea.pdb

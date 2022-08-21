@@ -40,14 +40,13 @@ namespace tarea.Controllers
 
 
         [HttpPost]
-        public ActionResult crearNuevo(tableZoo model )
+        public ActionResult CrearNuevo(tableZoo model)
         {
-
             try
             {
                 if (ModelState.IsValid)
                 {
-                    using(bdZooEntities db = new bdZooEntities())
+                    using (bdZooEntities db = new bdZooEntities())
                     {
                         var otable = new tableZoo();
 
@@ -59,11 +58,14 @@ namespace tarea.Controllers
                         db.zologico.Add(otable);
                         db.SaveChanges();
 
-                        
+
+
                     }
+
+                    return RedirectToAction("ZooView");
                 }
 
-                return RedirectToAction("ZooView");
+            
 
             } catch (Exception ex)
             {

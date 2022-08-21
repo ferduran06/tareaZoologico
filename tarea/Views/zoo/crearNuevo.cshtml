@@ -8,12 +8,31 @@
 
 
 @using (Html.BeginForm("crearNuevo", "zoo", FormMethod.Post)) {
-<div class="row">
+
+<div class="row">
     <div class="col-md-12">
 
-        @Html.LabelFor(d=de)
+        @Html.LabelFor(d => d.id)
+        @Html.TextBoxFor(d => d.id, "", new { @class = "form-control" })
 
+        @Html.LabelFor(d => d.pais)
+        @Html.TextBoxFor(d => d.pais, "", new { @class = "form-control" })
 
+        @Html.LabelFor(d => d.nombre)
+        @Html.TextBoxFor(d => d.nombre, "", new { @class = "form-control" })
+
+        @Html.LabelFor(d => d.telefono)
+        @Html.TextBoxFor(d => d.telefono, "", new { @class = "form-control" })
+
+        @Html.LabelFor(d => d.sitioWeb)
+        @Html.TextBoxFor(d => d.sitioWeb, "", new { @class = "form-control" })
+
+        <br />
+
+        <div style="text-align:right;">
+            <input value="Guardar" class="btn btn-primary" type="submit" />
+
+        </div>
     </div>
 
 </div>  
