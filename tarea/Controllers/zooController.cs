@@ -34,21 +34,21 @@ namespace tarea.Controllers
 
         public ActionResult crearNuevo()
         {
-            return View();
+            return View("crearNuevo");
         }
 
 
 
         [HttpPost]
-        public ActionResult CrearNuevo(tableZoo model)
+        public ActionResult AgregarNuevo(tableZoo model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    using (bdZooEntities db = new bdZooEntities())
+                    using (bdZooEntities db = new bdZooEntities())      //tabla de BD
                     {
-                        var otable = new tableZoo();
+                        tableZoo otable = new tableZoo();            //Tipo clase
 
                         otable.pais = model.pais;
                         otable.nombre = model.nombre;
@@ -57,17 +57,13 @@ namespace tarea.Controllers
 
                         db.zologico.Add(otable);
                         db.SaveChanges();
-
-
-
                     }
 
                     return RedirectToAction("ZooView");
                 }
 
-            
-
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }

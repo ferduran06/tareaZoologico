@@ -26,5 +26,7 @@ namespace tarea.Models
         }
     
         public virtual DbSet<zologico> zologico { get; set; }
+
+        public System.Data.Entity.DbSet<tarea.Models.viewModels.tableZoo> tableZoos { get; set; }
     }
 }
