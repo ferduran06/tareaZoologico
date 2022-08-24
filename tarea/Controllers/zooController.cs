@@ -11,9 +11,15 @@ namespace tarea.Controllers
 {
     public class zooController : Controller
     {
+        //Creación de la lista
         List<listZooView> listZoo;
 
         // GET: zoo
+
+
+        // El metodo Index, muestra la información almacenada en la base de datos
+        // devuelve una vista con lista con todos los datos de tipo zologico 
+
         public ActionResult Index()
         {
         
@@ -33,23 +39,27 @@ namespace tarea.Controllers
             return View("ZooView", listZoo);
         }
 
+
+        // Método que nuestra una nueva vista
         public ActionResult crearNuevo()
         {
             return View("crearNuevo");
         }
 
 
-
+        // Método que agrega los datos del zoologico a la base de datos, recibe
+        // por parámetro modelo de tipo zoologico, y devuelve un direccionamiento 
+       
         [HttpPost]
         public ActionResult AgregarNuevo(zologico model)
         {
             try
             {
-                if (ModelState.IsValid)
+                if (ModelState.IsValid)         //Valida si el modelo 
                 {
-                    using (bdZooEntities db = new bdZooEntities())      //tabla de BD
+                    using (bdZooEntities db = new bdZooEntities())      //Conexión con la BD
                     {
-                        var otable = new zologico();            //Tipo clase
+                        var otable = new zologico();                    //Tipo clase
 
                         otable.id = (int)model.id;
                         otable.pais = model.pais;
@@ -58,7 +68,7 @@ namespace tarea.Controllers
                         otable.sitioWeb = model.sitioWeb;
 
                         db.zologico.Add(otable);
-                        db.SaveChanges();
+                        db.SaveChanges();                               //Agrega los datos a la BD
                     }
                     return RedirectToAction("Index");
                 }
