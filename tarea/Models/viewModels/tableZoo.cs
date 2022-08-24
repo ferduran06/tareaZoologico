@@ -8,6 +8,9 @@ namespace tarea.Models.viewModels
 {
     public class tableZoo
     {
+
+        // Clase para obtener información de los codigos, donde se pueda 
+        // guardar la información y así poder validar la información.
         public int id { get; set; }
 
         [Required]              
