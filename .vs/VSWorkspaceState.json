@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\tarea",
+    "\\tarea\\Controllers",
+    "\\tarea\\Models",
+    "\\tarea\\Models\\viewModels",
+    "\\tarea\\Views",
+    "\\tarea\\Views\\zoo"
   ],
-  "SelectedNode": "\\tarea.sln",
+  "SelectedNode": "\\tarea\\Controllers\\zooController.cs",
   "PreviewInSolutionExplorer": false
 }

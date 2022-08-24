@@ -11,11 +11,12 @@ namespace tarea.Controllers
 {
     public class zooController : Controller
     {
+        List<listZooView> listZoo;
+
         // GET: zoo
         public ActionResult Index()
         {
-            List<listZooView> listZoo;
-
+        
             using (bdZooEntities db = new bdZooEntities())
             {
                 listZoo = (from d in db.zologico
@@ -40,7 +41,7 @@ namespace tarea.Controllers
 
 
         [HttpPost]
-        public ActionResult AgregarNuevo(tableZoo model)
+        public ActionResult AgregarNuevo(zologico model)
         {
             try
             {
@@ -48,8 +49,9 @@ namespace tarea.Controllers
                 {
                     using (bdZooEntities db = new bdZooEntities())      //tabla de BD
                     {
-                        tableZoo otable = new tableZoo();            //Tipo clase
+                        var otable = new zologico();            //Tipo clase
 
+                        otable.id = (int)model.id;
                         otable.pais = model.pais;
                         otable.nombre = model.nombre;
                         otable.telefono = model.telefono;
@@ -58,16 +60,14 @@ namespace tarea.Controllers
                         db.zologico.Add(otable);
                         db.SaveChanges();
                     }
-
-                    return RedirectToAction("ZooView");
+                    return RedirectToAction("Index");
                 }
-
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-
+            return View("ZooView", listZoo);
         }
     }
 }

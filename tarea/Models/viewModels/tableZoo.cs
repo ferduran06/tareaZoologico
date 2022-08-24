@@ -23,7 +23,7 @@ namespace tarea.Models.viewModels
 
         [Required]
         [Display(Name = "telefono")]
-        public int telefono { get; set; }
+        public String telefono { get; set; }
         
         public string sitioWeb { get; set; }
         }
